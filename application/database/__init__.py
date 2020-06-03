@@ -3,3 +3,4 @@ db = SQLAlchemy()
 
 def init_database(app):
     db.init_app(app)
+    
