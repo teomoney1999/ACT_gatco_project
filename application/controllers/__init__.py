@@ -3,7 +3,7 @@ from gatco.response import text, json
 from application.extensions import jinja
 
 def init_views(app):
-    # import application.controllers.user
+    import application.controllers.user
     # import application.controllers.quocgia
     # import application.controllers.tinhthanh
 
