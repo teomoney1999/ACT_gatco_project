@@ -117,7 +117,7 @@ class CheckIn(CommonModel):
     id = db.Column(Integer, autoincrement=True, primary_key=True)
 
     # User relationship
-    user_id = db.Column(Integer, ForeignKey('user.id'))
+    # user_id = db.Column(Integer, ForeignKey('user.id'))
     user = db.relationship("User", uselist=False, back_populates='checkin')
 
     time = db.Column(DateTime, nullable=False)
@@ -163,9 +163,10 @@ class Employee(CommonModel):
     position = db.relationship("Position", secondary=employee_position, back_populates='employee')
 
     worked_time = db.Column(Integer, nullable=False)
+
     # KindOfStaff relationship
-    kind_staff = db.relationship("Employee", back_populates='employee')
-    kind_staff_id = db.Column(Integer, ForeignKey('kind_staff.id'))
+    kind_staff_id = db.Column(Integer, db.ForeignKey('kind_staff.id'))
+    kind_staff = db.relationship("KindStaff", back_populates='employee')
 
     # # Available_Employee relationship
     # available_employee = db.relationship('Available_Employee', back_populates='employee')
@@ -288,9 +289,11 @@ class Listwork(CommonModel):
 class AssigningWork(CommonModel):
     __tablename__ = 'assigningwork'
     id = db.Column(Integer, autoincrement=True, primary_key=True)
+
     # User relationship (given_by)
     user = db.relationship('User', back_populates='assigningwork')
     given_by = db.Column(Integer, ForeignKey('user.id'), nullable=False)
+
     # User relationship (given to)
     given_to = db.Column(Integer, ForeignKey('user.id'), nullable=False)
 
