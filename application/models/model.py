@@ -165,7 +165,7 @@ class Employee(CommonModel):
     worked_time = db.Column(Integer, nullable=False)
 
     # KindOfStaff relationship
-    kind_staff_id = db.Column(Integer, db.ForeignKey('kind_staff.id'))
+    kind_staff_id = db.Column(Integer, ForeignKey('kind_staff.id'))
     kind_staff = db.relationship("KindStaff", back_populates='employee')
 
     # # Available_Employee relationship
