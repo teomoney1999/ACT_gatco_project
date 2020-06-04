@@ -93,7 +93,7 @@ class User(CommonModel):
     checkin = db.relationship("CheckIn", uselist=False, back_populates='user')
 
     # Employee relationship
-    employee_id = db.Column(Integer, ForeignKey('employee.id'))
+    # employee_id = db.Column(Integer, ForeignKey('employee.id'))
     employee = db.relationship("Employee", uselist=False, back_populates='user')
 
     # Role relationship
@@ -111,6 +111,7 @@ class User(CommonModel):
     # Listwork relationship
     listwork = db.relationship('Listwork', back_populates='user')
 
+
 class CheckIn(CommonModel):
     __tablename__ = 'checkin'
 
@@ -123,6 +124,7 @@ class CheckIn(CommonModel):
     time = db.Column(DateTime, nullable=False)
     is_checkin = db.Column(Boolean, default=False)
     is_late = db.Column(Boolean, default=True)
+
 
 class Role(CommonModel):
     __tablename__ = 'role'
@@ -149,6 +151,14 @@ class Function(CommonModel):
     # Role relationship
     role = db.relationship('Role', secondary=role_function, back_populates='function')
 
+class KindStaff(CommonModel):
+    __tablename__ = 'kindstaff'
+    id = db.Column(Integer, autoincrement=True, primary_key=True)
+    kind_name = db.Column(String(255), nullable=False)
+    pay_rate = db.Column(Float, nullable=False)
+
+    # Employee relationship
+    employee = db.relationship("Employee", back_populates='kindstaff')
 
 
 class Employee(CommonModel):
@@ -165,8 +175,8 @@ class Employee(CommonModel):
     worked_time = db.Column(Integer, nullable=False)
 
     # KindOfStaff relationship
-    kind_staff_id = db.Column(Integer, ForeignKey('kind_staff.id'))
-    kind_staff = db.relationship("KindStaff", back_populates='employee')
+    kindstaff_id = db.Column(Integer, ForeignKey('kindstaff.id'))
+    kindstaff = db.relationship("KindStaff", back_populates="employee")
 
     # # Available_Employee relationship
     # available_employee = db.relationship('Available_Employee', back_populates='employee')
@@ -175,8 +185,8 @@ class Employee(CommonModel):
     salary = db.Column(Integer, nullable=False)
 
     # User relationship
-    user = db.relationship("User", back_populates='employee', uselist=False)
     user_id = db.Column(Integer, ForeignKey('user.id'))
+    user = db.relationship("User", back_populates='employee', uselist=False)
 
     # Branch relationship
     branch = db.relationship('Branch', secondary=employee_branch, back_populates='employee')
@@ -256,8 +266,8 @@ class Work(CommonModel):
     name = db.Column(String(255), nullable=False)
 
     # Position relationship
-    position = db.relationship('Position', back_populates='work')
     position_id = db.Column(Integer, ForeignKey('position.id'))
+    position = db.relationship('Position', back_populates='work')
 
     # Shift relationship
     shift = db.relationship('Shift', secondary=work_shift, back_populates='work')
@@ -286,16 +296,18 @@ class Listwork(CommonModel):
     end_time = db.Column(Date, nullable=False)
     description = db.Column(String(255))
 
+
 class AssigningWork(CommonModel):
     __tablename__ = 'assigningwork'
     id = db.Column(Integer, autoincrement=True, primary_key=True)
 
     # User relationship (given_by)
-    user = db.relationship('User', back_populates='assigningwork')
     given_by = db.Column(Integer, ForeignKey('user.id'), nullable=False)
 
     # User relationship (given to)
     given_to = db.Column(Integer, ForeignKey('user.id'), nullable=False)
+    user = db.relationship('User', back_populates='assigningwork')
+
 
 class Examine(CommonModel):
     __tablename__ = 'examine'
@@ -307,14 +319,8 @@ class Examine(CommonModel):
 
     isDone = db.Column(Boolean, default=False)
 
-class KindStaff(CommonModel):
-    __tablename__ = 'kind_staff'
-    id = db.Column(Integer, autoincrement=True, primary_key=True)
-    kind_name = db.Column(String(255), nullable=False)
-    pay_rate = db.Column(Float, nullable=False)
 
-    # Employee relationship
-    employee = db.relationship("Employee", back_populates='kind_staff')
+
 
 
 
