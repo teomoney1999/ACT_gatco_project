@@ -16,15 +16,16 @@
         "type": "number",
         "primary": true
     },
-    "role_name": {
+    "kind_name": {
         "type": "string",
         "required": true,
         "length": 255
     },
-    "user": {
-        "type": "list"
+    "pay_rate": {
+        "type": "number",
+        "required": true
     },
-    "function": {
+    "employee": {
         "type": "list"
     }
 }

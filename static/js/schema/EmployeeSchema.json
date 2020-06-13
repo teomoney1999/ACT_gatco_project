@@ -16,36 +16,46 @@
         "type": "number",
         "primary": true
     },
-    "ma": {
+    "full_name": {
         "type": "string",
+        "required": true,
         "length": 255
     },
-    "ghichu": {
-        "type": "string",
-        "length": 255
+    "date_birth": {
+        "type": "datetime"
     },
-    "khachhang_id": {
+    "gender": {
+        "type": "string",
+        "required": true,
+        "length": 5
+    },
+    "worked_time": {
         "type": "number",
         "required": true
     },
-    "tenkhachhang": {
-        "type": "string",
-        "length": 255
-    },
-    "ngaymua": {
-        "type": "datetime"
-    },
-    "thanhtien": {
+    "kindstaff_id": {
         "type": "number"
     },
-    "vat": {
-        "default": 10,
+    "salary": {
+        "type": "number",
+        "required": true
+    },
+    "user_id": {
         "type": "number"
     },
-    "tongtien": {
-        "type": "number"
+    "position": {
+        "type": "list"
     },
-    "chitiethoadon": {
+    "kindstaff": {
+        "type": "dict"
+    },
+    "user": {
+        "type": "dict"
+    },
+    "branch": {
+        "type": "list"
+    },
+    "shift": {
         "type": "list"
     }
 }

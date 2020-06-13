@@ -2,14 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c01dfe63-67de-4716-a110-d8d720951fc8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/application/controllers/listwork.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/controllers/work.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/hanghoa.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/hoadon.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/khachhang.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/quocgia.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/tinhthanh.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/user.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -18,7 +32,12 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/controllers" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/application/controllers" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">

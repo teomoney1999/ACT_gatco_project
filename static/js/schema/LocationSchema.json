@@ -16,48 +16,32 @@
         "type": "number",
         "primary": true
     },
-    "user_name": {
+    "street": {
         "type": "string",
         "required": true,
         "length": 255
     },
-    "password": {
+    "block": {
         "type": "string",
         "required": true,
         "length": 255
     },
-    "confirm_password": {
-        "type": "string",
-        "length": 255
-    },
-    "salt": {
+    "district": {
         "type": "string",
         "required": true,
         "length": 255
     },
-    "isActive": {
-        "type": "boolean",
-        "default": false
+    "city": {
+        "type": "string",
+        "required": true,
+        "length": 255
     },
-    "checkin_id": {
-        "type": "number"
+    "nation": {
+        "type": "string",
+        "required": true,
+        "length": 255
     },
-    "checkin": {
-        "type": "dict"
-    },
-    "employee": {
-        "type": "list"
-    },
-    "role": {
-        "type": "list"
-    },
-    "function": {
-        "type": "list"
-    },
-    "examine": {
-        "type": "list"
-    },
-    "listwork": {
+    "branch": {
         "type": "list"
     }
 }

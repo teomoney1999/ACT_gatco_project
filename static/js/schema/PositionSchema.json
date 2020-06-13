@@ -16,20 +16,18 @@
         "type": "number",
         "primary": true
     },
-    "ma": {
-        "type": "string",
-        "length": 255
-    },
-    "ten": {
+    "position_name": {
         "type": "string",
         "required": true,
         "length": 255
     },
-    "mota": {
-        "type": "string",
-        "length": 255
+    "employee": {
+        "type": "list"
     },
-    "tinhthanh": {
+    "shift": {
+        "type": "list"
+    },
+    "work": {
         "type": "list"
     }
 }

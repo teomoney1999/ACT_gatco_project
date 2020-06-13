@@ -16,29 +16,21 @@
         "type": "number",
         "primary": true
     },
-    "hoadon_id": {
+    "given_by": {
         "type": "number",
         "required": true
     },
-    "hanghoa_id": {
+    "given_to": {
         "type": "number",
         "required": true
     },
-    "mahanghoa": {
-        "type": "string",
-        "length": 255
+    "user_given_by": {
+        "type": "dict"
     },
-    "tenhanghoa": {
-        "type": "string",
-        "length": 255
+    "user_given_to": {
+        "type": "dict"
     },
-    "soluong": {
-        "type": "number"
-    },
-    "dongia": {
-        "type": "number"
-    },
-    "thanhtien": {
-        "type": "number"
+    "listwork": {
+        "type": "list"
     }
 }

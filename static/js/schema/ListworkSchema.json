@@ -16,15 +16,31 @@
         "type": "number",
         "primary": true
     },
-    "role_name": {
+    "assigningwork_id": {
+        "type": "number"
+    },
+    "examine_id": {
+        "type": "number"
+    },
+    "start_time": {
+        "type": "datetime",
+        "required": true
+    },
+    "end_time": {
+        "type": "datetime",
+        "required": true
+    },
+    "description": {
         "type": "string",
-        "required": true,
         "length": 255
     },
-    "user": {
-        "type": "list"
+    "assigningwork": {
+        "type": "dict"
     },
-    "function": {
+    "examine": {
+        "type": "dict"
+    },
+    "user": {
         "type": "list"
     }
 }

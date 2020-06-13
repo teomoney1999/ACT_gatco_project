@@ -102,14 +102,16 @@ class User(CommonModel):
     # Function relationship
     function = db.relationship('Function', secondary=user_function, back_populates='user')
 
-    # AssigningWork relationship
-    assigningwork = db.relationship('AssigningWork', back_populates='user')
-
     # Examine relationship
     examine = db.relationship('Examine', back_populates='user')
 
     # Listwork relationship
-    listwork = db.relationship('Listwork', back_populates='user')
+    listwork = db.relationship('Listwork', secondary=user_listwork, back_populates='user')
+
+    # AssigningWork relationship
+    # assigningwork = db.relationship('AssigningWork')
+    # assigningwork_given_to = db.relationship('AssigningWork', back_populates='user_given_to')
+
 
 
 class CheckIn(CommonModel):
@@ -178,10 +180,6 @@ class Employee(CommonModel):
     kindstaff_id = db.Column(Integer, ForeignKey('kindstaff.id'))
     kindstaff = db.relationship("KindStaff", back_populates="employee")
 
-    # # Available_Employee relationship
-    # available_employee = db.relationship('Available_Employee', back_populates='employee')
-    # available_employee_id = db.Column(Integer, ForeignKey('available_employee.id'))
-
     salary = db.Column(Integer, nullable=False)
 
     # User relationship
@@ -194,18 +192,7 @@ class Employee(CommonModel):
     # Shift relationship
     shift = db.relationship('Shift', secondary=employee_shift, back_populates='employee')
 
-# class Available_Employee(CommonModel):
-#     __tablename__ = 'available_employee'
-#     id = db.Column(Integer, autoincrement=True, primary_key=True)
-#
-#     # Employee relationship
-#     employee = db.relationship("Employee", back_populates='available_employee')
-#     employee_id = db.Column(Integer, ForeignKey('employee.id'))
-#
-#     # Shift relationship
-#     shift = db.relationship("Shift", secondary=available_shift, back_populates='employee')
-#
-
+   
 class Shift(CommonModel):
     __tablename__ = 'shift'
     id = db.Column(Integer, autoincrement=True, primary_key=True)
@@ -306,7 +293,11 @@ class AssigningWork(CommonModel):
 
     # User relationship (given to)
     given_to = db.Column(Integer, ForeignKey('user.id'), nullable=False)
-    user = db.relationship('User', back_populates='assigningwork')
+    user_given_by = db.relationship('User', foreign_keys=[given_by])
+    user_given_to = db.relationship('User', foreign_keys=[given_to])
+
+    # Listwork relationship
+    listwork = db.relationship('Listwork', back_populates='assigningwork')
 
 
 class Examine(CommonModel):
@@ -316,6 +307,9 @@ class Examine(CommonModel):
     # User relationship
     user = db.relationship('User', back_populates='examine')
     examine_by = db.Column(Integer, ForeignKey('user.id'))
+
+    # Listwork relationship
+    listwork = db.relationship('Listwork', back_populates='examine')
 
     isDone = db.Column(Boolean, default=False)
 

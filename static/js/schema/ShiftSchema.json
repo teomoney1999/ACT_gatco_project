@@ -16,20 +16,26 @@
         "type": "number",
         "primary": true
     },
-    "ma": {
-        "type": "string",
-        "length": 255
-    },
-    "ten": {
+    "shift_name": {
         "type": "string",
         "required": true,
         "length": 255
     },
-    "gia": {
-        "type": "number"
+    "start_time": {
+        "type": "datetime",
+        "required": true
     },
-    "ghichu": {
-        "type": "string",
-        "length": 255
+    "end_time": {
+        "type": "datetime",
+        "required": true
+    },
+    "employee": {
+        "type": "list"
+    },
+    "position": {
+        "type": "list"
+    },
+    "work": {
+        "type": "list"
     }
 }

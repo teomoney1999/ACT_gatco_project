@@ -16,15 +16,18 @@
         "type": "number",
         "primary": true
     },
-    "role_name": {
+    "branch_name": {
         "type": "string",
         "required": true,
         "length": 255
     },
-    "user": {
-        "type": "list"
+    "location_id": {
+        "type": "number"
     },
-    "function": {
+    "location": {
+        "type": "dict"
+    },
+    "employee": {
         "type": "list"
     }
 }

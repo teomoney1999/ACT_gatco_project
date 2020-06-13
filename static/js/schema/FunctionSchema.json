@@ -16,7 +16,7 @@
         "type": "number",
         "primary": true
     },
-    "role_name": {
+    "function_name": {
         "type": "string",
         "required": true,
         "length": 255
@@ -24,7 +24,7 @@
     "user": {
         "type": "list"
     },
-    "function": {
+    "role": {
         "type": "list"
     }
 }

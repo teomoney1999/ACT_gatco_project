@@ -16,32 +16,30 @@
         "type": "number",
         "primary": true
     },
-    "ma": {
-        "type": "string",
-        "length": 255
-    },
-    "ten": {
+    "name": {
         "type": "string",
         "required": true,
         "length": 255
     },
-    "quocgia_id": {
-        "type": "number",
+    "position_id": {
+        "type": "number"
+    },
+    "start_time": {
+        "type": "datetime",
         "required": true
     },
-    "sodienthoai": {
+    "end_time": {
+        "type": "datetime",
+        "required": true
+    },
+    "description": {
         "type": "string",
         "length": 255
     },
-    "email": {
-        "type": "string",
-        "length": 255
-    },
-    "diachi": {
-        "type": "string",
-        "length": 255
-    },
-    "quocgia": {
+    "position": {
         "type": "dict"
+    },
+    "shift": {
+        "type": "list"
     }
 }
